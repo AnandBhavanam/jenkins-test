@@ -32,7 +32,7 @@ pipeline {
     }
 	post {
 		always {
-			echo 'i'm awesome
+			echo 'im awesome'
 		}
 		success {
 			echo 'i run when ur successful'
