@@ -34,16 +34,13 @@ pipeline {
 		always {
 			echo 'i'm awesome
 		}
-
 		success {
 			echo 'i run when ur successful'
 		}
-
 		failure {
 			echo 'i runs when ur failed'
 		}
-
-		changes {
+		changed {
 			echo 'i run when the status is changed'
 		}
 	}
