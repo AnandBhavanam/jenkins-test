@@ -13,9 +13,11 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
+			when {
+				not {
+                    branch main
+				}
+			}
         }
 
 		stage('Deploy- prod') {
