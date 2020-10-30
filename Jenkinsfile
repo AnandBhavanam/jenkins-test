@@ -1,9 +1,16 @@
-node {
+pipeline {
+	agent any
 
-	stage('Build') {
-		echo "Build"
-	}
-	stage('Test') {
-		echo "Test"
+	stages {
+
+	
+		stage('Compile stage') {
+			withMaven(maven : 'myMaven') {
+				sh 'mvn clean install'
+			}
+		}
+		stage('Test') {
+			echo "Test"
+	 	}
 	}
 }
