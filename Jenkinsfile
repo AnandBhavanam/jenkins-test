@@ -14,9 +14,9 @@ pipeline {
         }
         stage('push data') {
 			when {
-				not {
+				
                     branch 'main'
-				}
+			
 			}
 
 			steps {
