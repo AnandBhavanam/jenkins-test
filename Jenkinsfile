@@ -30,4 +30,21 @@ pipeline {
             }
         }
     }
+	post {
+		always {
+			echo 'i'm awesome
+		}
+
+		success {
+			echo 'i run when ur successful'
+		}
+
+		failure {
+			echo 'i runs when ur failed'
+		}
+
+		changes {
+			echo 'i run when the status is changed'
+		}
+	}
 }
