@@ -18,6 +18,10 @@ pipeline {
                     branch 'main'
 				}
 			}
+
+			steps {
+                echo 'deploy Deploying....'
+            }
         }
 
 		stage('Deploy- prod') {
