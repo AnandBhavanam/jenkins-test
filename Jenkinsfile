@@ -4,9 +4,10 @@ pipeline {
 	stages {
         stage('Build') {
             steps {
-                echo "mvn --version"
-				echo "$PATH"
-				echo "Build Number - $env.BUILD_NUMBER"
+                // echo "mvn --version"
+				// echo "$PATH"
+				// echo "Build Number - $env.BUILD_NUMBER"
+				sh "mvn clean install"
             }
         }
         stage('Test') {
