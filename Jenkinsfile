@@ -30,7 +30,7 @@ pipeline {
 		stage('Docker Build') {
 			steps {
 				script {
-					dockerImage = docker.build("anand47r/exchange:${env.BUILD.TAG}")
+					dockerImage = docker.build("anand47r/exchange:0.0.1")
 				}
 			}
 		}
