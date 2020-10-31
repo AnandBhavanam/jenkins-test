@@ -21,35 +21,10 @@ pipeline {
 				//sh "mvn clean install"
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('push data') {
-			when {
-				
-                    branch 'main'
-			
-			}
-
-			steps {
-                echo 'deploy Deploying....'
-            }
-        }
-
-		stage('Docker build') {
-            steps {
-
-                echo 'Testing Docker built..'
-            }
-        }
-
-		stage('Deploy- prod') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+		stage('Package') {
+			sh 'mvn package -DskipTests'
+		}
+       
     }
 	post {
 		always {
