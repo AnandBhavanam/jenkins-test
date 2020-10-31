@@ -29,15 +29,19 @@ pipeline {
 
 		stage('Docker Build') {
 			steps {
-				dockerImage = docker.build("anand47r/exchange:$env.BUILD.TAG")
+				script {
+					dockerImage = docker.build("anand47r/exchange:${env.BUILD.TAG}")
+				}
 			}
 		}
 
 		stage('Docker push') {
 			steps {
-				docker.withRegistry('','dockerhub') {
-					dockerImage.push();
-                    dockerImage.push('latest');
+				script {
+					docker.withRegistry('','dockerhub') {
+						dockerImage.push();
+                    	dockerImage.push('latest');
+					}
 				}
 			}
 		}
